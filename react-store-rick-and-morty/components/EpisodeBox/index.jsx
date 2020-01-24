@@ -8,9 +8,9 @@ class EpisodeBox extends React.Component {
     }
 
     toggleFavAction(episode) {
-        const {favourites} = this.props;
-        const {dispatch} = this.props.storage;
-        const episodeInFavourites = favourites.includes(episode);
+        const {dispatch, state} = this.props.storage;
+        const {favourites} = state;
+        const episodeInFavourites = favourites.includes(episode.id);
         if (episodeInFavourites) {
             dispatch(removeFavourite(episode));
         } else {
@@ -23,8 +23,10 @@ class EpisodeBox extends React.Component {
     }
 
     render() {
-        const {image, name, number, season} = this.props.episode;
-        const {favourites, episode} = this.props;
+        const {episode, storage} = this.props;
+        const {image, name, number, season} = episode;
+        const {state} = storage;
+        const {favourites} = state;
         return(
             <section className='episode-box'>
                 {console.log('rerendering!')}
@@ -38,7 +40,7 @@ class EpisodeBox extends React.Component {
                         Season: {season} Number: {number}
                     </div>
                     <button type='button' onClick={() => this.toggleFavAction(episode)}>
-                        {favourites.find(fav => fav.id === episode.id) ? 'Unfav' : 'Fav'}
+                        {favourites.find(fav => fav === episode.id) ? 'Unfav' : 'Fav'}
                     </button>
                 </section>
             </section>

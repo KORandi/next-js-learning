@@ -1,6 +1,6 @@
 import {initialState} from "../../features/Store/Store";
 
-export function HomepageReducer(state = initialState, action) {
+export function ApiReducer(state = initialState, action) {
     switch (action.type) {
         case 'index/fetch-episodes':
             return { ...state, episodes: action.payload };

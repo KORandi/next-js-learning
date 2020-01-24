@@ -1,4 +1,6 @@
+const API_URL = 'https://api.tvmaze.com/singlesearch/shows';
+
 export default async function getEpisodes() {
-    const data = await fetch('https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes');
+    const data = await fetch(`${API_URL}?q=rick-&-morty&embed=episodes`);
     return await data.json();
 }

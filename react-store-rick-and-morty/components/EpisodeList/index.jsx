@@ -1,20 +1,14 @@
 import React from 'react'
 import EpisodeBox from "../EpisodeBox";
-import {Store, StoreProvider} from "../../features/Store/Store";
+import {Store} from "../../features/Store/Store";
 
 
-export default class EpisodeList extends React.Component {
-
-    render() {
-        const {episodes, favourites} = this.props;
-        return (
-            <Store.Consumer>
-                {(context) => (
-                    episodes.map((episode, index) => (
-                        <EpisodeBox key={index} episode={episode} storage={context} favourites={favourites}/>
-                    ))
-                )}
-            </Store.Consumer>
-        );
-    }
+export default function EpisodeList(props) {
+    const {episodes, favourites} = props;
+    const storage = React.useContext(Store);
+    return (
+        episodes.map((episode, index) => (
+            <EpisodeBox key={index} episode={episode} storage={storage} favourites={favourites}/>
+        ))
+    );
 }

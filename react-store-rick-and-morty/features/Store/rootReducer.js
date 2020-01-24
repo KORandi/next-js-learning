@@ -1,10 +1,10 @@
 import {EpisodeBoxReducer} from '../../components/EpisodeBox/reducers';
 import {initialState} from "./Store";
-import {HomepageReducer} from "../../pages/index/_reducer";
+import {ApiReducer} from "../Api/reducer";
 
 let reducers = [
     EpisodeBoxReducer,
-    HomepageReducer
+    ApiReducer
 ];
 
 export default function (state = initialState, action) {

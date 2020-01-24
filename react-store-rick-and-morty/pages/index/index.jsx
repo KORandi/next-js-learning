@@ -1,5 +1,4 @@
 import React from 'react';
-import {fetchDataAction} from "./_actions";
 import EpisodeList from "../../components/EpisodeList";
 import fetchEpisodes from "./_api";
 import {Store} from "../../features/Store/Store";
@@ -11,7 +10,7 @@ const Index = (props) => {
     React.useEffect(() => {
         if (state.episodes.length === 0) {
             fetchEpisodes().then((dataJSON) => {
-                dispatch(fetchDataAction([...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes,...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes,...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes,...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes,...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes,...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes, ...dataJSON._embedded.episodes]));
+                dispatch(fetchDataAction([...dataJSON._embedded.episodes]));
             });
         }
     });

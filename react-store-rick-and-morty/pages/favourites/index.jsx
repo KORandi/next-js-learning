@@ -2,16 +2,16 @@ import React from 'react';
 import Layout from "../../components/Layout";
 import EpisodeList from "../../components/EpisodeList";
 import {Store} from "../../features/Store/Store";
-import {addFavourite, removeFavourite} from "../index/_actions";
 
 const Favourites = (props) => {
     const {state, dispatch} = React.useContext(Store);
-    const {favourites} = state;
+    const {favourites, episodes} = state;
+    let list = episodes.filter((episode) => (favourites.indexOf(episode.id) !== -1));
     return (
         <Layout>
             <section className='episode-layout'>
                 <EpisodeList
-                    episodes={favourites}
+                    episodes={list}
                     favourites={favourites}
                 />
             </section>
