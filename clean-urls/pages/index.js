@@ -2,11 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-type LinkListPropType = {
+type LinkListProps = {
   list: Array<{ name: string, href: string }>
 }
 
-const LinkList = ({list}: LinkListPropType) => (
+const LinkList = ({list}: LinkListProps) => (
   list.map(({name, href}, index: number) =>
     (
       <li key={index}>
@@ -19,7 +19,7 @@ const LinkList = ({list}: LinkListPropType) => (
 );
 
 const Index = () => {
-  const listOfLinks = [
+  const listOfLinks: Array<{ name: string, href: string }> = [
     {
       'name': 'Homepage',
       'href': '/',
