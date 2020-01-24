@@ -2,7 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-const LinkList = ({list}: {list: {href: string, name: string}}) => (
+type LinkListPropType = {
+  list: Array<{ name: string, href: string }>
+}
+
+const LinkList = ({list}: LinkListPropType) => (
   list.map(({name, href}, index: number) =>
     (
       <li key={index}>
