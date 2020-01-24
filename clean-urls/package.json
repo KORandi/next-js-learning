@@ -1,0 +1,30 @@
+{
+  "name": "clean-urls",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "flow": "flow",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.6",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-flowtype": "^4.6.0",
+    "eslint-plugin-react": "^7.18.0",
+    "flow-bin": "^0.116.1",
+    "flow-typed": "^2.6.2"
+  }
+}
