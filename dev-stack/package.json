@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "eslint && next build",
     "flow": "flow",
     "start": "next start",
-    "postinstall": "flow-typed install | next",
+    "postinstall": "flow-typed install && next",
     "flow-typed": "flow-typed"
   },
   "author": "",
@@ -27,6 +27,8 @@
     "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-react": "^7.18.0",
     "flow-bin": "^0.116.1",
-    "flow-typed": "^2.6.2"
+    "flow-typed": "^2.6.2",
+    "generator-fountain-webapp": "^1.0.0",
+    "yo": "^3.1.1"
   }
 }
