@@ -8,7 +8,8 @@
     "build": "next build",
     "flow": "flow",
     "start": "next start",
-    "postinstall": "flow init | next"
+    "postinstall": "flow-typed install | next",
+    "flow-typed": "flow-typed"
   },
   "author": "",
   "license": "ISC",
