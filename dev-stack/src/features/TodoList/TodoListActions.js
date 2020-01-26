@@ -13,7 +13,3 @@ export function deleteTask(payload) {
     payload,
   };
 }
-
-export function f() {
-
-}
